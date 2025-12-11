@@ -1,0 +1,281 @@
+---
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob('../../content/blog/*.md');
+  return allPosts.map(post => ({
+    params: { slug: post.file.split('/').pop()?.replace('.md', '') },
+    props: { post }
+  }));
+}
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const { post } = Astro.props;
+const { Content } = post;
+const { title, description, pubDate, author, tags } = post.frontmatter;
+---
+
+<BaseLayout title={`${title} - Academia Tekoha`} description={description}>
+    <Header />
+    
+    <article class="blog-post">
+        <header class="post-header">
+            <div class="container">
+                <a href="/blog" class="back-link">← Voltar para o blog</a>
+                <h1 class="post-title">{title}</h1>
+                <div class="post-meta">
+                    <time datetime={pubDate}>
+                        {new Date(pubDate).toLocaleDateString('pt-BR', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        })}
+                    </time>
+                    <span class="separator">•</span>
+                    <span class="author">{author}</span>
+                </div>
+                {tags && (
+                    <div class="post-tags">
+                        {tags.map((tag: string) => (
+                            <span class="tag">{tag}</span>
+                        ))}
+                    </div>
+                )}
+            </div>
+        </header>
+
+        <div class="post-content container">
+            <Content />
+        </div>
+
+        <div class="post-footer container">
+            <div class="cta-box">
+                <h3>Gostou do artigo?</h3>
+                <p>Venha conhecer a Academia Tekoha e fazer uma aula experimental gratuita!</p>
+                <a href="https://venda.nextfit.com.br/16bbadfc-45e5-4ad0-8a25-4248d41c8b3e/contratos" class="cta-button">
+                    Agendar Aula Gratuita
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <Footer />
+</BaseLayout>
+
+<style>
+    .blog-post {
+        margin-top: 80px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 var(--spacing-md);
+    }
+
+    .post-header {
+        padding: var(--spacing-xl) 0 var(--spacing-lg);
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .back-link {
+        display: inline-block;
+        color: var(--color-muted);
+        font-size: 0.9rem;
+        margin-bottom: var(--spacing-md);
+        transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+        color: var(--color-text);
+    }
+
+    .post-title {
+        margin-bottom: var(--spacing-md);
+        line-height: 1.2;
+    }
+
+    .post-meta {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+        color: var(--color-muted);
+        font-size: 0.95rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .separator {
+        opacity: 0.5;
+    }
+
+    .post-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-xs);
+    }
+
+    .tag {
+        background: var(--color-pastel-mint);
+        padding: 0.25rem 0.75rem;
+        border-radius: 2px;
+        font-size: 0.85rem;
+        text-transform: lowercase;
+    }
+
+    .post-content {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .post-content :global(h2) {
+        margin-top: var(--spacing-lg);
+        margin-bottom: var(--spacing-md);
+        font-size: 2rem;
+        color: var(--color-text);
+    }
+
+    .post-content :global(h3) {
+        margin-top: var(--spacing-md);
+        margin-bottom: var(--spacing-sm);
+        font-size: 1.5rem;
+        color: var(--color-text);
+    }
+
+    .post-content :global(p) {
+        margin-bottom: var(--spacing-md);
+        line-height: 1.8;
+        color: var(--color-text);
+    }
+
+    .post-content :global(ul),
+    .post-content :global(ol) {
+        margin-bottom: var(--spacing-md);
+        padding-left: 1.5rem;
+    }
+
+    .post-content :global(li) {
+        margin-bottom: var(--spacing-xs);
+        line-height: 1.7;
+    }
+
+    .post-content :global(strong) {
+        font-weight: 600;
+        color: var(--color-text);
+    }
+
+    .post-content :global(a) {
+        color: var(--color-text);
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
+
+    .post-content :global(a:hover) {
+        color: var(--color-accent-dark);
+    }
+
+    .post-content :global(img) {
+        max-width: 100%;
+        height: auto;
+        margin: var(--spacing-lg) 0;
+        border-radius: 4px;
+    }
+
+    .post-content :global(blockquote) {
+        border-left: 3px solid var(--color-accent-dark);
+        padding-left: var(--spacing-md);
+        margin: var(--spacing-lg) 0;
+        font-style: italic;
+        color: var(--color-muted);
+    }
+
+    .post-content :global(code) {
+        background: var(--color-pastel-lavender);
+        padding: 0.2rem 0.4rem;
+        border-radius: 2px;
+        font-size: 0.9em;
+        font-family: monospace;
+    }
+
+    .post-content :global(pre) {
+        background: var(--color-pastel-lavender);
+        padding: var(--spacing-md);
+        border-radius: 4px;
+        overflow-x: auto;
+        margin: var(--spacing-md) 0;
+    }
+
+    .post-content :global(pre code) {
+        background: none;
+        padding: 0;
+    }
+
+    .post-content :global(table) {
+        width: 100%;
+        border-collapse: collapse;
+        margin: var(--spacing-md) 0;
+    }
+
+    .post-content :global(th),
+    .post-content :global(td) {
+        padding: var(--spacing-sm);
+        border: 1px solid var(--color-border);
+        text-align: left;
+    }
+
+    .post-content :global(th) {
+        background: var(--color-pastel-lavender);
+        font-weight: 600;
+    }
+
+    .post-footer {
+        padding: var(--spacing-xl) var(--spacing-md);
+        border-top: 1px solid var(--color-border);
+    }
+
+    .cta-box {
+        background: linear-gradient(135deg, var(--color-pastel-lavender) 0%, var(--color-pastel-mint) 100%);
+        padding: var(--spacing-lg);
+        border-radius: 4px;
+        text-align: center;
+    }
+
+    .cta-box h3 {
+        margin-bottom: var(--spacing-sm);
+        font-size: 1.8rem;
+    }
+
+    .cta-box p {
+        color: var(--color-muted);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .cta-button {
+        display: inline-block;
+        background: var(--color-text);
+        color: white;
+        padding: 0.9rem 2rem;
+        font-weight: 500;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+        background: var(--color-text-soft);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    @media (max-width: 768px) {
+        .post-header {
+            padding: var(--spacing-lg) 0 var(--spacing-md);
+        }
+
+        .post-content {
+            padding: var(--spacing-lg) var(--spacing-md);
+        }
+
+        .post-title {
+            font-size: 2rem;
+        }
+    }
+</style>

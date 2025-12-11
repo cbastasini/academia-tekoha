@@ -1,0 +1,156 @@
+---
+---
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-about">
+            <div class="footer-logo">
+                <img src="/images/tekoha-logo.png" alt="Academia Tekoha" class="footer-logo-image" />
+                <h3>Academia Tekoha</h3>
+            </div>
+            <p>
+                Centro de excelência em artes marciais em Guararema. 
+                Especializado em Judô, Jiu-Jitsu e Karatê para todas as idades.
+            </p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/academiatekoha/" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+                <a href="https://www.facebook.com/profile.php?id=61559598642033" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h4>Modalidades</h4>
+            <ul class="footer-links">
+                <li><a href="/#modalidades">Judô</a></li>
+                <li><a href="/#modalidades">Jiu-Jitsu</a></li>
+                <li><a href="/#modalidades">Karatê</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Links Rápidos</h4>
+            <ul class="footer-links">
+                <li><a href="/#beneficios">Benefícios</a></li>
+                <li><a href="/#filosofia">Filosofia</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/#localizacao">Localização</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Contato</h4>
+            <ul class="footer-links">
+                <li><a href="tel:11984443048">(11) 98444-3048</a></li>
+                <li><a href="mailto:contato@academiatekoha.com.br">Email</a></li>
+                <li>Praça 9 de Julho, 41<br>Guararema - SP</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} Academia Tekoha. Todos os direitos reservados. | Guararema, São Paulo</p>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: var(--color-text);
+        color: white;
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .footer-about h3 {
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-sm);
+        color: white;
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .footer-logo-image {
+        height: 50px;
+        width: auto;
+        filter: brightness(0) invert(1);
+        object-fit: contain;
+    }
+
+    .footer-about p {
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.7;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .footer-section h4 {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-md);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+    }
+
+    .footer-links {
+        list-style: none;
+    }
+
+    .footer-links li {
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        transition: color 0.3s ease;
+        font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+        color: var(--color-accent);
+    }
+
+    .social-links {
+        display: flex;
+        gap: var(--spacing-sm);
+        margin-top: var(--spacing-md);
+    }
+
+    .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+        background: var(--color-accent);
+        border-color: var(--color-accent);
+        transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+        max-width: 1400px;
+        margin: var(--spacing-lg) auto 0;
+        padding-top: var(--spacing-md);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 968px) {
+        .footer-content {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
