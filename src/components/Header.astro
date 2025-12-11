@@ -3,6 +3,7 @@ const navLinks = [
   { href: '/#modalidades', text: 'Modalidades' },
   { href: '/#beneficios', text: 'Benefícios' },
   { href: '/#filosofia', text: 'Filosofia' },
+  { href: 'https://www.instagram.com/stories/highlights/18054715670483328/', text: 'Professores', target: '_blank' },
   { href: '/#depoimentos', text: 'Depoimentos' },
   { href: '/blog', text: 'Blog' },
   { href: 'https://www.instagram.com/stories/highlights/18074222341504145/', text: 'Horários', target: '_blank' },
@@ -113,21 +114,24 @@ const navLinks = [
     }
 
     .cta-button {
-        background: var(--color-text);
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
         color: white;
-        padding: 0.7rem 1.5rem;
-        font-weight: 500;
-        font-size: 0.9rem;
-        border-radius: 2px;
-        transition: all 0.3s ease;
+        padding: 0.9rem 1.8rem;
+        font-weight: 600;
+        font-size: 0.95rem;
+        border-radius: 6px;
         border: none;
+        transition: all 0.3s ease;
         cursor: pointer;
+        box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
 
     .cta-button:hover {
-        background: var(--color-text-soft);
+        background: linear-gradient(135deg, #059669 0%, #047857 100%);
         transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
     }
 
     .mobile-menu-btn {
