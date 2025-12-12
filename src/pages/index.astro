@@ -1,0 +1,370 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout 
+    title="Academia Tekoha - Judô, Jiu-Jitsu e Karatê em Guararema SP"
+    description="Academia de artes marciais em Guararema SP. Aulas de Judô, Jiu-Jitsu e Karatê para crianças e adultos. Desenvolvimento pessoal através das artes marciais tradicionais."
+>
+    <Header />
+
+    <main id="main-content">
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <p class="hero-subtitle">Academia de Artes Marciais</p>
+            <h1>O caminho importa mais que o destino</h1>
+            <p class="hero-description">
+                Centro de excelência em Judô, Jiu-Jitsu e Karatê em Guararema. 
+                Desenvolvimento pessoal através das artes marciais tradicionais com instrutores qualificados.
+            </p>
+            <div class="hero-actions">
+                <a href="https://venda.nextfit.com.br/16bbadfc-45e5-4ad0-8a25-4248d41c8b3e/contratos" class="cta-button" aria-label="Acessar página de planos e preços">Começar Agora</a>
+                <a href="tel:11984443048" class="cta-button secondary" aria-label="Ligar para (11) 98444-3048">(11) 98444-3048</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="/images/evolucao-bjj.jpg" alt="Evolução do Jiu-Jitsu - da origem à arte marcial moderna" loading="eager">
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Anos de Experiência</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">3</span>
+                <span class="stat-label">Modalidades</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">200+</span>
+                <span class="stat-label">Alunos Ativos</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">5★</span>
+                <span class="stat-label">Avaliação</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modalidades Section -->
+    <section id="modalidades">
+        <div class="section-header">
+            <p class="section-subtitle">Nossas Modalidades</p>
+            <h2 class="section-title">Artes Marciais Tradicionais</h2>
+            <p class="section-description">
+                Oferecemos três modalidades completas para todas as idades, 
+                desde iniciantes até praticantes avançados.
+            </p>
+        </div>
+        <div class="modalidades-grid">
+            <article class="modalidade-card">
+                <span class="modalidade-icon">🥋</span>
+                <h3>Judô</h3>
+                <p>
+                    Arte marcial japonesa focada em projeções e imobilizações. 
+                    Desenvolve equilíbrio, coordenação motora e disciplina através do caminho suave.
+                </p>
+                <ul class="modalidade-features">
+                    <li>Turmas infantis e adultas</li>
+                    <li>Desenvolvimento motor completo</li>
+                    <li>Fortalecimento muscular</li>
+                    <li>Técnicas de queda segura</li>
+                </ul>
+            </article>
+
+            <article class="modalidade-card">
+                <span class="modalidade-icon">🤼</span>
+                <h3>Jiu-Jitsu</h3>
+                <p>
+                    A arte suave que ensina defesa pessoal através de técnicas de solo, 
+                    alavancas e estrangulamentos. Ideal para todas as idades e biótipos.
+                </p>
+                <ul class="modalidade-features">
+                    <li>Defesa pessoal efetiva</li>
+                    <li>Estratégia e raciocínio</li>
+                    <li>Controle corporal</li>
+                    <li>Autoconfiança</li>
+                </ul>
+            </article>
+
+            <article class="modalidade-card">
+                <span class="modalidade-icon">👊</span>
+                <h3>Karatê</h3>
+                <p>
+                    Arte marcial tradicional que combina golpes de mãos e pés, 
+                    katas e kumite. Desenvolvimento de força, velocidade e precisão.
+                </p>
+                <ul class="modalidade-features">
+                    <li>Técnicas de striking</li>
+                    <li>Kata tradicional</li>
+                    <li>Condicionamento físico</li>
+                    <li>Autocontrole e foco</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="filosofia" class="philosophy">
+        <div class="philosophy-content">
+            <div class="philosophy-text">
+                <p class="section-subtitle">Nossa Filosofia</p>
+                <h2>Princípio Educacional</h2>
+                <p style="color: var(--color-muted); margin: var(--spacing-md) 0; font-size: 1.1rem; line-height: 1.7;">
+                    Nosso foco principal é o educacional, proporcionando formação completa em artes marciais. 
+                    Acreditamos que o aprendizado vai além das competições, sendo fundamental para o 
+                    desenvolvimento pessoal, físico e mental.
+                </p>
+                <blockquote>
+                    Somente se aproxima da perfeição quem a procura com constância, sabedoria e, sobretudo, humildade.
+                    <cite>— Jigoro Kano, fundador do Judô</cite>
+                </blockquote>
+            </div>
+            <div>
+                <img src="/images/faixa-preta-bjj.jpg" alt="Faixa preta de Jiu-Jitsu - símbolo de maestria e dedicação" style="width: 100%; height: 100%; object-fit: cover; max-height: 500px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="beneficios">
+        <div class="section-header">
+            <p class="section-subtitle">Por que praticar</p>
+            <h2 class="section-title">Benefícios das Artes Marciais</h2>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <span class="benefit-icon">🧠</span>
+                <h3>Ganhos Cognitivos</h3>
+                <p>Melhora concentração, memória, raciocínio estratégico e tomada de decisões.</p>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">💪</span>
+                <h3>Condicionamento Físico</h3>
+                <p>Desenvolvimento de força, resistência, flexibilidade e coordenação motora.</p>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">🛡️</span>
+                <h3>Defesa Pessoal</h3>
+                <p>Técnicas efetivas de autodefesa e maior consciência situacional.</p>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">🤝</span>
+                <h3>Socialização</h3>
+                <p>Ambiente acolhedor que promove respeito, amizade e trabalho em equipe.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="depoimentos" class="testimonials">
+        <div class="section-header">
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">O que dizem nossos alunos</p>
+            <h2 class="section-title" style="color: white;">Depoimentos</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    "Todas pessoas que nela passa tem um carinho, atenção especial, tem vários tipos de lutas com valor acessível. Tanto para crianças como para adultos. Eles são nota 10."
+                </p>
+                <p class="testimonial-author">— Juliana Silva Gomes</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    "Excelente academia! Treinos bem conduzidos, professor dedicado e clima de parceria. Aprendizado e evolução garantidos!"
+                </p>
+                <p class="testimonial-author">— Paulo Junior</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    "Sou aluna e meus filhos também. Professor excelente e ambiente familiar. Super recomendo."
+                </p>
+                <p class="testimonial-author">— Priscila Pessoa</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="localizacao">
+        <div class="section-header">
+            <p class="section-subtitle">Venha nos visitar</p>
+            <h2 class="section-title">Nossa Localização</h2>
+            <p class="section-description">
+                Estamos no coração de Guararema, em local de fácil acesso. 
+                Agende uma aula experimental gratuita.
+            </p>
+        </div>
+        <div class="location-content">
+            <div class="location-info">
+                <div class="info-item">
+                    <span class="info-icon">📍</span>
+                    <div class="info-content">
+                        <h3>Endereço</h3>
+                        <p>Praça Nove de Julho, 41, sala 04<br>Centro, Guararema - SP<br>CEP: 08900-000</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">📞</span>
+                    <div class="info-content">
+                        <h3>Telefone</h3>
+                        <p><a href="tel:11984443048" style="color: var(--color-text);">(11) 98444-3048</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">✉️</span>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p><a href="mailto:contato@academiatekoha.com.br" style="color: var(--color-text);">contato@academiatekoha.com.br</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">🕐</span>
+                    <div class="info-content">
+                        <h3>Horário de Funcionamento</h3>
+                        <p>Segunda a Sexta: 07:30 - 21:30</p>
+                    </div>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3661.4658736!2d-46.034400!3d-23.410400!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce63e1c8c88889%3A0x9c8c0c8c0c8c0c8c!2sPra%C3%A7a%209%20de%20Julho%2C%2041%20-%20Centro%2C%20Guararema%20-%20SP%2C%2008900-000!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Localização da Academia Tekoha no mapa">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Pronto para começar sua jornada?</h2>
+        <p>Agende uma aula experimental gratuita e conheça nossa estrutura</p>
+        <a href="https://wa.me/5511984443048?text=Olá!%20Gostaria%20de%20agendar%20uma%20aula%20experimental%20na%20Academia%20Tekoha." class="cta-button" target="_blank" rel="noopener">Agendar Aula Gratuita</a>
+    </section>
+    </main>
+
+    <Footer />
+</BaseLayout>
+
+<style>
+    /* All styles from previous HTML version */
+    .hero { margin-top: 80px; min-height: 90vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: var(--spacing-lg); max-width: 1400px; margin-left: auto; margin-right: auto; padding: var(--spacing-xl) var(--spacing-md); }
+    .hero-content { animation: fadeInUp 0.8s ease 0.2s both; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-subtitle { color: var(--color-accent-dark); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 500; margin-bottom: var(--spacing-sm); }
+    .hero h1 { margin-bottom: var(--spacing-md); }
+    .hero-description { font-size: 1.1rem; color: var(--color-muted); margin-bottom: var(--spacing-lg); max-width: 540px; line-height: 1.7; }
+    .hero-actions { display: flex; gap: var(--spacing-sm); flex-wrap: wrap; }
+    .cta-button { 
+        background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%); 
+        color: white; 
+        padding: 1rem 2rem; 
+        font-weight: 600; 
+        font-size: 1rem; 
+        border-radius: 8px; 
+        transition: all 0.3s ease; 
+        display: inline-block; 
+        box-shadow: 0 2px 8px rgba(20, 184, 166, 0.2);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border: none;
+    }
+    .cta-button:hover { 
+        background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%); 
+        transform: translateY(-3px); 
+        box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3); 
+    }
+    .cta-button.secondary { 
+        background: var(--color-text);
+        color: white; 
+        border: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    .cta-button.secondary:hover {
+        background: var(--color-text-soft);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .hero-image { position: relative; height: 600px; animation: fadeInUp 0.8s ease 0.4s both; background: #000000; display: flex; align-items: center; justify-content: center; }
+    .hero-image::before { content: ''; position: absolute; top: -20px; right: -20px; width: 100%; height: 100%; border: 2px solid var(--color-accent); z-index: -1; }
+    .hero-image img { width: 100%; height: 100%; object-fit: contain; }
+    .stats { background: linear-gradient(135deg, var(--color-pastel-mint) 0%, var(--color-pastel-blue) 100%); color: var(--color-text); padding: var(--spacing-lg) var(--spacing-md); }
+    .stats-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-lg); text-align: center; }
+    .stat-item { animation: fadeInUp 0.6s ease both; }
+    .stat-number { font-family: var(--font-display); font-size: 3rem; font-weight: 700; color: var(--color-text); display: block; margin-bottom: var(--spacing-xs); }
+    .stat-label { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-muted); }
+    section { padding: var(--spacing-xl) var(--spacing-md); max-width: 1400px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: var(--spacing-lg); }
+    .section-subtitle { color: var(--color-accent-dark); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 500; margin-bottom: var(--spacing-sm); }
+    .section-title { margin-bottom: var(--spacing-sm); }
+    .section-description { color: var(--color-muted); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+    .modalidades-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--spacing-md); margin-top: var(--spacing-lg); }
+    .modalidade-card { border: 1px solid var(--color-border); padding: var(--spacing-lg); transition: all 0.4s ease; background: white; }
+    .modalidade-card:hover { border-color: var(--color-accent-dark); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); }
+    .modalidade-icon { font-size: 2.5rem; margin-bottom: var(--spacing-md); display: block; }
+    .modalidade-card h3 { margin-bottom: var(--spacing-sm); font-size: 1.8rem; }
+    .modalidade-card p { color: var(--color-muted); line-height: 1.7; margin-bottom: var(--spacing-md); }
+    .modalidade-features { list-style: none; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid var(--color-border); }
+    .modalidade-features li { padding: var(--spacing-xs) 0; color: var(--color-muted); font-size: 0.95rem; }
+    .modalidade-features li::before { content: '•'; color: var(--color-text); font-weight: bold; display: inline-block; width: 1em; margin-right: var(--spacing-xs); }
+    .philosophy { background: var(--color-pastel-lavender); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+    .philosophy-content { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); align-items: center; }
+    .philosophy-text blockquote { font-family: var(--font-display); font-size: 1.8rem; line-height: 1.5; margin: var(--spacing-lg) 0; padding-left: var(--spacing-md); border-left: 3px solid var(--color-text); font-style: italic; }
+    .philosophy-text cite { display: block; margin-top: var(--spacing-sm); font-size: 1rem; font-style: normal; color: var(--color-muted); }
+    .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-lg); margin-top: var(--spacing-lg); }
+    .benefit-item { text-align: center; padding: var(--spacing-md); }
+    .benefit-icon { font-size: 3rem; margin-bottom: var(--spacing-md); display: block; }
+    .benefit-item h3 { font-size: 1.3rem; margin-bottom: var(--spacing-sm); }
+    .benefit-item p { color: var(--color-muted); }
+    .testimonials { background: linear-gradient(135deg, var(--color-text) 0%, var(--color-text-soft) 100%); color: white; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-md); margin-top: var(--spacing-lg); }
+    .testimonial-card { background: rgba(255, 255, 255, 0.05); padding: var(--spacing-md); border-left: 3px solid var(--color-accent); }
+    .testimonial-text { font-size: 1.05rem; line-height: 1.7; margin-bottom: var(--spacing-md); font-style: italic; }
+    .testimonial-author { font-weight: 600; font-size: 0.95rem; }
+    .location-content { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); align-items: start; }
+    .location-info { display: grid; gap: var(--spacing-md); }
+    .info-item { display: flex; gap: var(--spacing-sm); align-items: start; }
+    .info-icon { font-size: 1.5rem; color: var(--color-accent-dark); flex-shrink: 0; }
+    .info-content h3 { font-size: 1rem; margin-bottom: 0.3rem; font-weight: 600; }
+    .info-content p { color: var(--color-muted); }
+    .map-container { width: 100%; height: 400px; border: 1px solid var(--color-border); background: var(--color-border); }
+    .map-container iframe { width: 100%; height: 100%; border: none; }
+    .cta-section { 
+        background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%); 
+        color: white; 
+        text-align: center; 
+        padding: var(--spacing-xl) var(--spacing-md); 
+    }
+    .cta-section h2 { color: white; margin-bottom: var(--spacing-md); }
+    .cta-section p { font-size: 1.2rem; margin-bottom: var(--spacing-lg); opacity: 0.95; }
+    .cta-section .cta-button { 
+        background: white; 
+        color: #0f766e; 
+        font-size: 1.1rem; 
+        padding: 1.2rem 3rem; 
+        font-weight: 700;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+    .cta-section .cta-button:hover { 
+        background: #f0fdfa; 
+        color: #115e59;
+        transform: translateY(-4px); 
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); 
+    }
+    @media (max-width: 968px) {
+        .hero { grid-template-columns: 1fr; padding: var(--spacing-lg) var(--spacing-md); }
+        .hero-image { height: 300px; }
+        .hero-image img { object-fit: contain; }
+        .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        .modalidades-grid, .benefits-grid, .testimonials-grid { grid-template-columns: 1fr; }
+        .philosophy-content, .location-content { grid-template-columns: 1fr; }
+        section { padding: var(--spacing-lg) var(--spacing-md); }
+    }
+</style>
