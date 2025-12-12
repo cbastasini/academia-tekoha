@@ -1,8 +1,7 @@
 ---
 title: "5 Benefícios do Judô para Crianças em Guararema"
 description: "Descubra como o judô infantil pode transformar o desenvolvimento físico e mental do seu filho na Academia Tekoha em Guararema."
-publishDate: 2024-12-08
-category: "Crianças"
+pubDate: 2025-01-10
 author: "Academia Tekoha"
 image: "/images/blog/judo-criancas.jpg"
 tags: ["judô", "crianças", "desenvolvimento infantil", "guararema"]

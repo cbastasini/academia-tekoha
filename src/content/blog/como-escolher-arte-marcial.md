@@ -1,8 +1,7 @@
 ---
 title: "Como Escolher a Arte Marcial Ideal para Seu Filho"
 description: "Guia completo para pais que querem iniciar seus filhos nas artes marciais. Entenda as diferenças entre Judô, Jiu-Jitsu e Karatê."
-publishDate: 2024-12-12
-category: "Guia para Pais"
+pubDate: 2025-01-08
 author: "Academia Tekoha"
 image: "/images/blog/escolher-arte-marcial.jpg"
 tags: ["artes marciais", "crianças", "judô", "jiu-jitsu", "karatê"]
