@@ -11,6 +11,8 @@ const navLinks = [
 ];
 ---
 
+<a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
 <header>
     <nav>
         <a href="/" class="logo">
@@ -85,6 +87,23 @@ const navLinks = [
 </script>
 
 <style>
+    /* Skip navigation link for accessibility */
+    .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #0d9488;
+        color: white;
+        padding: 8px 16px;
+        text-decoration: none;
+        z-index: 10000;
+        font-weight: 600;
+    }
+
+    .skip-link:focus {
+        top: 0;
+    }
+
     header {
         position: fixed;
         top: 0;

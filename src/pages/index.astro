@@ -10,6 +10,7 @@ import Footer from '../components/Footer.astro';
 >
     <Header />
 
+    <main id="main-content">
     <!-- Hero Section -->
     <section id="inicio" class="hero">
         <div class="hero-content">
@@ -20,8 +21,8 @@ import Footer from '../components/Footer.astro';
                 Desenvolvimento pessoal através das artes marciais tradicionais com instrutores qualificados.
             </p>
             <div class="hero-actions">
-                <a href="https://venda.nextfit.com.br/16bbadfc-45e5-4ad0-8a25-4248d41c8b3e/contratos" class="cta-button">Começar Agora</a>
-                <a href="tel:11984443048" class="cta-button secondary">(11) 98444-3048</a>
+                <a href="https://venda.nextfit.com.br/16bbadfc-45e5-4ad0-8a25-4248d41c8b3e/contratos" class="cta-button" aria-label="Acessar página de planos e preços">Começar Agora</a>
+                <a href="tel:11984443048" class="cta-button secondary" aria-label="Ligar para (11) 98444-3048">(11) 98444-3048</a>
             </div>
         </div>
         <div class="hero-image">
@@ -248,6 +249,7 @@ import Footer from '../components/Footer.astro';
         <p>Agende uma aula experimental gratuita e conheça nossa estrutura</p>
         <a href="https://wa.me/5511984443048?text=Olá!%20Gostaria%20de%20agendar%20uma%20aula%20experimental%20na%20Academia%20Tekoha." class="cta-button" target="_blank" rel="noopener">Agendar Aula Gratuita</a>
     </section>
+    </main>
 
     <Footer />
 </BaseLayout>
