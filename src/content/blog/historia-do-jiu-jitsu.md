@@ -1,7 +1,8 @@
 ---
 title: "História do Jiu-Jitsu Brasileiro: Das Origens ao Mundo"
 description: "Conheça a fascinante história do Jiu-Jitsu Brasileiro, desde suas raízes japonesas até se tornar um fenômeno mundial de artes marciais."
-pubDate: 2025-01-05
+publishDate: 2024-12-10
+category: "História"
 author: "Academia Tekoha"
 image: "/images/blog/historia-jiu-jitsu.jpg"
 tags: ["jiu-jitsu", "história", "artes marciais", "brasil"]

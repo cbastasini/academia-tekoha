@@ -1,0 +1,452 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+// Get all blog posts
+const allPosts = await Astro.glob('../content/blog/*.md');
+
+// Sort by date (newest first) - you can customize this
+const sortedPosts = allPosts.sort((a, b) => {
+    const dateA = new Date(a.frontmatter.publishDate || '2024-01-01');
+    const dateB = new Date(b.frontmatter.publishDate || '2024-01-01');
+    return dateB.getTime() - dateA.getTime();
+});
+
+// Latest post (hero)
+const latestPost = sortedPosts[0];
+
+// Other posts
+const otherPosts = sortedPosts.slice(1);
+---
+
+<BaseLayout 
+    title="Blog - Academia Tekoha | Artes Marciais em Guararema"
+    description="Artigos sobre Judô, Jiu-Jitsu e Karatê. Dicas de treino, história das artes marciais, benefícios para saúde e desenvolvimento pessoal."
+>
+    <Header />
+
+    <main id="main-content" class="blog-page">
+        <!-- Hero Section -->
+        <section class="blog-hero">
+            <div class="blog-hero-content">
+                <p class="section-subtitle">Blog Academia Tekoha</p>
+                <h1>Artes Marciais, Filosofia e Desenvolvimento</h1>
+                <p class="blog-hero-description">
+                    Explore artigos sobre técnicas, história, benefícios e filosofia das artes marciais. 
+                    Conteúdo educativo para praticantes de todos os níveis.
+                </p>
+            </div>
+        </section>
+
+        <!-- Latest Post (Featured) -->
+        {latestPost && (
+            <section class="featured-post">
+                <div class="section-header">
+                    <p class="section-subtitle">Publicação mais recente</p>
+                    <h2>Destaque do Blog</h2>
+                </div>
+                
+                <article class="featured-article">
+                    <div class="featured-content">
+                        <div class="post-meta">
+                            <span class="post-category">
+                                {latestPost.frontmatter.category || 'Artes Marciais'}
+                            </span>
+                            <span class="post-date">
+                                {new Date(latestPost.frontmatter.publishDate || '2024-01-01').toLocaleDateString('pt-BR', {
+                                    day: 'numeric',
+                                    month: 'long',
+                                    year: 'numeric'
+                                })}
+                            </span>
+                        </div>
+                        
+                        <h3 class="featured-title">
+                            <a href={latestPost.url}>
+                                {latestPost.frontmatter.title}
+                            </a>
+                        </h3>
+                        
+                        <p class="featured-excerpt">
+                            {latestPost.frontmatter.description}
+                        </p>
+                        
+                        <a href={latestPost.url} class="read-more">
+                            Ler artigo completo
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+            </section>
+        )}
+
+        <!-- All Posts Grid -->
+        <section class="all-posts">
+            <div class="section-header">
+                <p class="section-subtitle">Todos os artigos</p>
+                <h2>Explore Nosso Conteúdo</h2>
+            </div>
+            
+            <div class="posts-grid">
+                {otherPosts.map((post) => (
+                    <article class="post-card">
+                        <div class="post-card-header">
+                            <span class="post-category">
+                                {post.frontmatter.category || 'Artes Marciais'}
+                            </span>
+                            <span class="post-date">
+                                {new Date(post.frontmatter.publishDate || '2024-01-01').toLocaleDateString('pt-BR', {
+                                    day: 'numeric',
+                                    month: 'short',
+                                    year: 'numeric'
+                                })}
+                            </span>
+                        </div>
+                        
+                        <h3 class="post-card-title">
+                            <a href={post.url}>
+                                {post.frontmatter.title}
+                            </a>
+                        </h3>
+                        
+                        <p class="post-card-excerpt">
+                            {post.frontmatter.description}
+                        </p>
+                        
+                        <a href={post.url} class="post-card-link">
+                            Ler mais →
+                        </a>
+                    </article>
+                ))}
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="blog-cta">
+            <h2>Pronto para Começar sua Jornada?</h2>
+            <p>Agende uma aula experimental gratuita e descubra os benefícios das artes marciais</p>
+            <div class="cta-actions">
+                <a href="https://wa.me/5511984443048?text=Olá!%20Gostaria%20de%20agendar%20uma%20aula%20experimental%20na%20Academia%20Tekoha." class="cta-button" target="_blank" rel="noopener">
+                    Agendar Aula Gratuita
+                </a>
+                <a href="/#modalidades" class="cta-button secondary">
+                    Conhecer Modalidades
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</BaseLayout>
+
+<style>
+    .blog-page {
+        background: var(--color-bg);
+    }
+
+    /* Hero Section */
+    .blog-hero {
+        margin-top: 80px;
+        padding: var(--spacing-xl) var(--spacing-md);
+        background: linear-gradient(135deg, var(--color-pastel-mint) 0%, var(--color-pastel-blue) 100%);
+        text-align: center;
+    }
+
+    .blog-hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .blog-hero h1 {
+        margin-bottom: var(--spacing-md);
+        color: var(--color-text);
+    }
+
+    .blog-hero-description {
+        font-size: 1.1rem;
+        color: var(--color-muted);
+        line-height: 1.7;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Featured Post */
+    .featured-post {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .section-subtitle {
+        color: var(--color-accent-dark);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-weight: 500;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .section-header h2 {
+        margin-bottom: var(--spacing-sm);
+        color: var(--color-text);
+    }
+
+    .featured-article {
+        background: white;
+        border: 1px solid var(--color-border);
+        padding: var(--spacing-lg);
+        transition: all 0.4s ease;
+    }
+
+    .featured-article:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        border-color: var(--color-accent-dark);
+    }
+
+    .featured-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .post-meta {
+        display: flex;
+        gap: var(--spacing-sm);
+        align-items: center;
+        margin-bottom: var(--spacing-md);
+        flex-wrap: wrap;
+    }
+
+    .post-category {
+        background: var(--color-pastel-mint);
+        color: var(--color-accent-dark);
+        padding: 0.25rem 0.75rem;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .post-date {
+        color: var(--color-muted);
+        font-size: 0.9rem;
+    }
+
+    .featured-title {
+        font-size: 2.5rem;
+        margin-bottom: var(--spacing-md);
+        line-height: 1.2;
+    }
+
+    .featured-title a {
+        color: var(--color-text);
+        transition: color 0.3s ease;
+    }
+
+    .featured-title a:hover {
+        color: var(--color-accent-dark);
+    }
+
+    .featured-excerpt {
+        font-size: 1.1rem;
+        color: var(--color-muted);
+        line-height: 1.7;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .read-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--color-accent-dark);
+        font-weight: 600;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        transition: all 0.3s ease;
+    }
+
+    .read-more:hover {
+        gap: 0.75rem;
+    }
+
+    .read-more svg {
+        transition: transform 0.3s ease;
+    }
+
+    .read-more:hover svg {
+        transform: translateX(4px);
+    }
+
+    /* Posts Grid */
+    .all-posts {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: var(--spacing-xl) var(--spacing-md);
+        background: var(--color-bg-soft);
+    }
+
+    .posts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: var(--spacing-lg);
+        margin-top: var(--spacing-lg);
+    }
+
+    .post-card {
+        background: white;
+        border: 1px solid var(--color-border);
+        padding: var(--spacing-lg);
+        transition: all 0.4s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .post-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        border-color: var(--color-accent-dark);
+    }
+
+    .post-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: var(--spacing-md);
+        gap: var(--spacing-sm);
+        flex-wrap: wrap;
+    }
+
+    .post-card-title {
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-sm);
+        line-height: 1.3;
+    }
+
+    .post-card-title a {
+        color: var(--color-text);
+        transition: color 0.3s ease;
+    }
+
+    .post-card-title a:hover {
+        color: var(--color-accent-dark);
+    }
+
+    .post-card-excerpt {
+        color: var(--color-muted);
+        line-height: 1.7;
+        margin-bottom: var(--spacing-md);
+        flex-grow: 1;
+    }
+
+    .post-card-link {
+        color: var(--color-accent-dark);
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    .post-card-link:hover {
+        transform: translateX(4px);
+    }
+
+    /* CTA Section */
+    .blog-cta {
+        background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+        color: white;
+        text-align: center;
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .blog-cta h2 {
+        color: white;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .blog-cta p {
+        font-size: 1.1rem;
+        margin-bottom: var(--spacing-lg);
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cta-actions {
+        display: flex;
+        gap: var(--spacing-sm);
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cta-button {
+        background: white;
+        color: #0d9488;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-button.secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+    }
+
+    .cta-button.secondary:hover {
+        background: white;
+        color: #0d9488;
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+        .blog-hero {
+            padding: var(--spacing-lg) var(--spacing-md);
+        }
+
+        .featured-title {
+            font-size: 2rem;
+        }
+
+        .posts-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .cta-actions {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .cta-button {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .featured-title {
+            font-size: 1.75rem;
+        }
+
+        .post-meta {
+            font-size: 0.85rem;
+        }
+    }
+</style>
