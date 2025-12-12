@@ -1,9 +1,0 @@
-# Academia Tekoha - Robots.txt
-User-agent: *
-Allow: /
-
-# Sitemap
-Sitemap: https://academiatekoha.com.br/sitemap-index.xml
-
-# Disallow admin paths (if any in future)
-# Disallow: /admin
