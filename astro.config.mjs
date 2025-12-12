@@ -3,6 +3,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://academiatekoha.com.br',
+  output: 'static',
   integrations: [
     sitemap({
       customPages: ['https://academiatekoha.com.br/blog'],
@@ -12,7 +13,9 @@ export default defineConfig({
     })
   ],
   build: {
-    inlineStylesheets: 'auto'
+    inlineStylesheets: 'auto',
+    format: 'directory'
   },
-  compressHTML: true
+  compressHTML: true,
+  trailingSlash: 'ignore'
 });
