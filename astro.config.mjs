@@ -6,9 +6,18 @@ export default defineConfig({
   output: 'static',
   integrations: [
     sitemap({
+      customPages: [
+        'https://academiatekoha.com.br/',
+        'https://academiatekoha.com.br/#modalidades',
+        'https://academiatekoha.com.br/#beneficios',
+        'https://academiatekoha.com.br/#filosofia',
+        'https://academiatekoha.com.br/#depoimentos',
+        'https://academiatekoha.com.br/#localizacao',
+      ],
       changefreq: 'weekly',
       priority: 0.7,
       lastmod: new Date(),
+      filter: (page) => !page.includes('/blog/'),
     })
   ],
   build: {
