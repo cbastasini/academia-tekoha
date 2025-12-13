@@ -5,12 +5,11 @@ const navLinks = [
   { href: '/#filosofia', text: 'Filosofia' },
   { href: 'https://www.instagram.com/stories/highlights/18054715670483328/', text: 'Professores', target: '_blank' },
   { href: '/#depoimentos', text: 'Depoimentos' },
+  { href: '/blog', text: 'Blog' },
   { href: 'https://www.instagram.com/stories/highlights/18074222341504145/', text: 'Horários', target: '_blank' },
   { href: '/#localizacao', text: 'Localização' },
 ];
 ---
-
-<a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
 <header>
     <nav>
@@ -27,7 +26,7 @@ const navLinks = [
             ))}
         </ul>
         <a href="https://venda.nextfit.com.br/16bbadfc-45e5-4ad0-8a25-4248d41c8b3e/contratos" class="cta-button" target="_blank" rel="noopener">
-            Planos
+            Planos e Preços
         </a>
         <button class="mobile-menu-btn" aria-label="Menu" id="mobileMenuBtn">☰</button>
     </nav>
@@ -45,7 +44,7 @@ const navLinks = [
             ))}
             <li>
                 <a href="https://venda.nextfit.com.br/16bbadfc-45e5-4ad0-8a25-4248d41c8b3e/contratos" class="mobile-cta" target="_blank" rel="noopener">
-                    Planos
+                    Planos e Preços
                 </a>
             </li>
         </ul>
@@ -86,23 +85,6 @@ const navLinks = [
 </script>
 
 <style>
-    /* Skip navigation link for accessibility */
-    .skip-link {
-        position: absolute;
-        top: -40px;
-        left: 0;
-        background: #0d9488;
-        color: white;
-        padding: 8px 16px;
-        text-decoration: none;
-        z-index: 10000;
-        font-weight: 600;
-    }
-
-    .skip-link:focus {
-        top: 0;
-    }
-
     header {
         position: fixed;
         top: 0;
