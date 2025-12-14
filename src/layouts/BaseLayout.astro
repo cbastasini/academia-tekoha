@@ -174,6 +174,6 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site);
     <slot />
     
     <!-- DataLayer Tracking - Academia Tekoha -->
-    <script src="/tracking.js"></script>
+    <script is:inline src="/tracking.js"></script>
 </body>
 </html>
