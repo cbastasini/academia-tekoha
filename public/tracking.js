@@ -153,7 +153,22 @@
                 'eventCategory': 'social',
                 'eventLabel': 'instagram_click',
                 'socialNetwork': 'instagram',
-                'linkText': link.textContent.trim(),
+                'linkText': link.textContent.trim() || link.getAttribute('aria-label'),
+                'linkURL': link.href
+            });
+        });
+    });
+    
+    // Links para Facebook
+    const facebookLinks = document.querySelectorAll('a[href*="facebook.com"]');
+    facebookLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            pushEvent({
+                'event': 'social_click',
+                'eventCategory': 'social',
+                'eventLabel': 'facebook_click',
+                'socialNetwork': 'facebook',
+                'linkText': link.textContent.trim() || link.getAttribute('aria-label'),
                 'linkURL': link.href
             });
         });
