@@ -54,15 +54,15 @@
                 <li><a href="mailto:contato@academiatekoha.com.br">contato@academiatekoha.com.br</a></li>
                 <li>Praça 9 de Julho, 41<br>Guararema - SP</li>
             </ul>
-            <div class="footer-logo-partners">
-                <a href="https://metodowinnersoficial.com.br/" target="_blank" rel="noopener" aria-label="Método Winners">
-                    <img src="/images/metodo-winners-logo.png" alt="Método Winners" class="partner-logo" />
-                </a>
-            </div>
         </div>
     </div>
     <div class="footer-bottom">
         <p>&copy; {new Date().getFullYear()} Academia Tekoha. Todos os direitos reservados. | CNPJ: 55.135.600/0001-59 | Guararema, São Paulo</p>
+        <div class="footer-partners">
+            <a href="https://metodowinnersoficial.com.br/" target="_blank" rel="noopener" aria-label="Método Winners">
+                <img src="/images/metodo-winners-logo.png" alt="Método Winners" class="partner-logo-bottom" />
+            </a>
+        </div>
     </div>
 </footer>
 
@@ -156,26 +156,6 @@
         transform: translateY(-3px);
     }
 
-    .footer-logo-partners {
-        margin-top: var(--spacing-lg);
-        padding-top: var(--spacing-md);
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .partner-logo {
-        height: 40px;
-        width: auto;
-        object-fit: contain;
-        transition: all 0.3s ease;
-        opacity: 0.9;
-        filter: brightness(0) invert(1);
-    }
-
-    .partner-logo:hover {
-        opacity: 1;
-        transform: scale(1.05);
-    }
-
     .footer-bottom {
         max-width: 1400px;
         margin: var(--spacing-lg) auto 0;
@@ -184,6 +164,26 @@
         text-align: center;
         color: rgba(255, 255, 255, 0.5);
         font-size: 0.9rem;
+    }
+
+    .footer-partners {
+        margin-top: var(--spacing-lg);
+        padding-top: var(--spacing-md);
+        text-align: center;
+    }
+
+    .partner-logo-bottom {
+        height: 80px;
+        width: auto;
+        object-fit: contain;
+        transition: all 0.3s ease;
+        opacity: 0.85;
+        filter: brightness(0) invert(1);
+    }
+
+    .partner-logo-bottom:hover {
+        opacity: 1;
+        transform: scale(1.08);
     }
 
     @media (max-width: 968px) {
