@@ -22,7 +22,7 @@ import Footer from '../components/Footer.astro';
             </p>
             <div class="hero-actions">
                 <a href="https://venda.nextfit.com.br/16bbadfc-45e5-4ad0-8a25-4248d41c8b3e/contratos" class="cta-button" aria-label="Acessar página de planos e preços">Começar Agora</a>
-                <a href="tel:11984443048" class="cta-button secondary" aria-label="Ligar para (11) 98444-3048">(11) 98444-3048</a>
+                <a href="https://wa.me/5511984443048" class="cta-button secondary" aria-label="Falar conosco pelo WhatsApp" target="_blank" rel="noopener noreferrer">Fale Conosco</a>
             </div>
         </div>
         <div class="hero-image">
@@ -362,6 +362,16 @@ import Footer from '../components/Footer.astro';
         .hero { grid-template-columns: 1fr; padding: var(--spacing-lg) var(--spacing-md); }
         .hero-image { height: 300px; }
         .hero-image img { object-fit: contain; }
+        .hero-actions { 
+            justify-content: center; 
+            width: 100%; 
+        }
+        .hero-actions .cta-button {
+            flex: 1;
+            min-width: 140px;
+            text-align: center;
+            justify-content: center;
+        }
         .stats-grid { grid-template-columns: repeat(2, 1fr); }
         .modalidades-grid, .benefits-grid, .testimonials-grid { grid-template-columns: 1fr; }
         .philosophy-content, .location-content { grid-template-columns: 1fr; }
